@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment | YOUR CINEMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css"> <!-- Optional: reuse your main styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .payment-container {
+            background: #1c1c1c;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .payment-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff4747;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2e2e2e;
+            color: #fff;
+        }
+
+        .btn-pay {
+            margin-top: 25px;
+            width: 100%;
+            padding: 14px;
+            background-color: #ff4747;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn-pay:hover {
+            background-color: #ff2626;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Secure Payment</h2>
+        <form id="paymentForm">
+            <label for="name">Cardholder Name</label>
+            <input type="text" id="name" required>
+
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" maxlength="16" required>
+
+            <label for="expDate">Expiry Date</label>
+            <input type="text" id="expDate" placeholder="DD/MM/YY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" maxlength="4" required>
+
+            <label for="plan">Select Plan</label>
+            <select id="plan" required>
+                <option value="">-- Choose Plan --</option>
+                <option value="PLAN I">PLAN I - $10.9</option>
+                <option value="PLAN II">PLAN II - $25.9</option>
+                <option value="PLAN III">PLAN III - $50.9</option>
+            </select>
+
+            <button type="submit" class="btn-pay">Pay Now</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Payment successful! Enjoy your subscription to YOUR CINEMA.");
+            window.location.href = "index.html"; // Redirect to homepage
+        });
+    </script>
+</body>
+</html>
+<!-- End of payment.html -->
+<!-- This is a simple payment form that collects cardholder name, card number, expiry date, CVV, and plan selection. 
+     On submission, it shows an alert and redirects to the homepage. 
+     You can enhance this with real payment processing using APIs like Stripe or PayPal in a production environment. -->
