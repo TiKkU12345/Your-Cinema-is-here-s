@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | YOUR CINEMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style2.css"> <!-- Optional: reuse your main styles -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #111, #1a0000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .login-container {
+            background-color: #1c1c1c;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff4747;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            background-color: #2e2e2e;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .btn-login {
+            margin-top: 25px;
+            width: 100%;
+            padding: 14px;
+            background-color: #ff4747;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn-login:hover {
+            background-color: #ff2626;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #ff4747;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to YOUR CINEMA</h2>
+        <form id="loginForm">
+            <label for="username">Username or Email</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+
+            <button type="submit" class="btn-login">Login</button>
+
+            <div class="register-link">
+                Don't have an account? <a href="register.html">Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="sc.js"></script>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            // Temporary mock login logic
+            if (user === "user" && pass === "1234") {
+                alert("Login successful!");
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid credentials. Try 'user' and '1234' for demo.");
+            }
+        });
+    </script>
+</body>
+</html>
