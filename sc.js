@@ -52,47 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     );
 
-// User Login button
-// const loginButtons = document.querySelectorAll(".btn3 a");
-// loginButtons.forEach(button => {
-//     button.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         alert("Redirecting to Login page...");
-//         window.location.href = "login.html";
-//     });
-// }
-// );
-// });
 
 
 
-
-// User Loginbuttons
-    const LoginButtons = document.querySelectorAll(".Login button");
-    LoginButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            alert("Redirecting to Login page...");
-            // Redirect simulation
-            window.location.href = "login.html"; 
-        });
-    }
-    );
-    });
-
-    // Watch Now buttons
-    //  document.getElementById('watchNowBtn').addEventListener('click', function() {
-    //         const videoPlayer = document.getElementById('videoPlayer');
-    //         const movieVideo = document.getElementById('movieVideo');
-    //         if (videoPlayer.style.display === 'none') {
-    //             videoPlayer.style.display = 'block';
-    //             movieVideo.play();
-    //         } else {
-    //             videoPlayer.style.display = 'none';
-    //             movieVideo.pause();
-    //         }
-    //     });
-
-        // Optionally, add functionality for 'Watch Later' button
-        // document.getElementById('watchLaterBtn').addEventListener('click', function() {
-        //     alert('Movie added to Watch Later.');
-        // });
