@@ -10,7 +10,15 @@
     <title>YOUR CINEMA</title>
 </head>
 <body>
- 
+
+
+<body onload="initPage()">
+<div id="mainContent" style="display:none;">
+    <!-- everything from header to end of body except login modal -->
+    <!-- your full website content here -->
+</div>
+
+
     
     <!--Header section-->
     <header>
@@ -36,7 +44,9 @@
     <div class="user">
         <i class="fas fa-bell"></i>
         <i class="fas fa-search"></i>
-        <a href="">Login</a>
+        <a href="#" onclick="document.getElementById('loginModal').style.display='block'">Login</a>
+
+
      
     </div>  
 </header>
@@ -130,14 +140,6 @@
 
 
 
-
-
-
-
-
-
-
-
      
         <!---HOLLYWOOD MOVIES-->
 
@@ -146,8 +148,8 @@
             <h1>HOLLYWOOD MOVIES</h1>
             <div class="hollywood-container">
                 <div class="hollywood-inside">
-                    <img src="hollywood(3).jpeg" alt="">                 
-                    <h3>SEX LIFE</h3>
+                    <img src="hollywood(8).jpeg" alt="">                 
+                    <h3>AVENGERS</h3>
                     <div class="imdb">
                         <p>9.8</p>
                       
@@ -191,8 +193,7 @@
                 </div>
 
                
-        <!-- <div class="more1"> -->
-            <!-- <a href="">View More</a> -->
+      
         </div>
     </section>
     <!------------->
@@ -247,14 +248,7 @@
                         </div>
                 </div>
 
-
-               <!-- <div class="more2">
-                   <a href="">View More</a>
-               </div> -->
             </section>
-
-
-            <!------------->
         
 
 
@@ -348,18 +342,7 @@
         </div>
     </div>
 
-<!---Video--->
-<!-- <div class="video">
-    <video width="640" height="360" controls>
-        <source src="slenium.py - new.py - Visual Studio Code 2025-01-26 14-34-32.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
 
- -->
-
-
-
-<!------>
 
 <!--Goto button-->
 <div class="scroll">
@@ -417,12 +400,9 @@
 
 </div>
 
-
-
-
-
+            
    <style>
-        /* Add some basic styling for better layout */
+     /* Add some basic styling for better layout */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -461,6 +441,55 @@
             background-color: #218838;
         }
     </style>
+
+
+<div id="loginModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); z-index:999;">
+  <div style="background:#230e0e; padding:20px; width:300px; margin:100px auto; position:relative;">
+    <span style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;"
+     onclick="document.getElementById('loginModal').style.display=''">&times;</span>
+    <h2>Login</h2>
+    <form onsubmit="handleLogin(event)">
+      <label for="username">Username</label><br>
+      <input type="text" id="username" required><br><br>
+      <label for="password">Password</label><br>
+      <input type="password" id="password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    alert("Logged in as: " + username);  // You can replace this with real authentication logic.
+    document.getElementById('loginModal').style.display = 'none';
+  }
+</script>
+
+
+<script>
+  function initPage() {
+    // Hide main content and show login modal on first load
+    document.getElementById('mainContent').style.display = 'none';
+    document.getElementById('loginModal').style.display = 'block';
+  }
+
+  function handleLogin(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+
+    if (username) {
+      alert("Welcome, " + username + "!");
+      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+    }
+  }
+</script>
+
 
 
 </body>
